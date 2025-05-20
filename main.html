@@ -76,14 +76,16 @@
         padding: 1rem 0;
         font-size: 0.8rem;
       }
-      .table-container {
-    width: 100%;
+  .table-container {
     overflow-x: auto;
-    white - space: nowrap;
-    }
-    .wide-column {
-    width: 550px;
-    }
+  }
+  table {
+    table-layout: fixed;
+    width: max-content; /* 表格宽度由内容决定 */
+  }
+  th, td {
+    width: 120px; /* 每列固定宽度 */
+  }
       @media (max-width: 600px) {
         main {
           padding: 1.2rem;
