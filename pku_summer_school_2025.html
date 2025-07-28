@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Peking University Summer School | Exhibition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pku: {
+                            red: '#C91F37',      // 北大红
+                            dark: '#1F2937',     // 深色文本
+                            light: '#F3F4F6',    // 浅色背景
+                            gray: '#4B5563',     // 灰色文本
+                            gold: '#D4AF37',     // 金色点缀
+                            lightRed: '#FEE2E2'  // 浅红色背景
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Noto Serif SC', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .bg-blur {
+                backdrop-filter: blur(8px);
+            }
+            .photo-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .photo-hover:hover {
+                transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-pku-dark antialiased bg-white">
+    <!-- 头部区域 -->
+    <header class="pt-8 pb-4 border-b border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://www.pku.edu.cn/Uploads/Picture/2019/12/04/u5de790e64c817.png" alt="北大校徽" class="h-12 w-12 mr-3">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-serif font-bold text-pku-red">2025 "Intelligence in Data and Operations Research" Graduate Summer School, College of Advanced Manufacturing and Robotics, Peking University</h1>
+                        <p class="text-pku-gray">7.14 - 7.25, 2025 | Exhibition</p>
+                    </div>
+                </div>
+                <div class="bg-pku-lightRed text-pku-red px-4 py-2 rounded-full flex items-center">
+                    <i class="fa fa-check-circle mr-2"></i>
+                    <span>Event Ended Successfully</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="relative py-12 md:py-20 bg-pku-light/30">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-serif font-bold text-pku-dark mb-6">
+                    Explore the Boundaries of Knowledge <br>  Reap the Joy of Growth
+                </h2>
+                <p class="text-pku-gray text-lg md:text-xl mb-8 leading-relaxed">
+                    The 2025 "Intelligence in Data and Operations Research" Graduate Summer School of Peking University has successfully concluded.
+                    Over the wonderful two-week journey, we explored, learned and grew together, leaving behind countless precious memories and fruitful achievements.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据统计 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl md:text-3xl font-serif font-bold text-pku-dark mb-4">Overview of Summer School Achievements</h3>
+                <div class="w-20 h-1 bg-pku-red mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div class="bg-white rounded-xl shadow-md p-6 text-center transform transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div class="text-pku-red text-4xl md:text-5xl font-bold mb-2">101</div>
+                    <p class="text-pku-gray font-medium">participants from around the world</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 text-center transform transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div class="text-pku-red text-4xl md:text-5xl font-bold mb-2">53</div>
+                    <p class="text-pku-gray font-medium">class hours</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 text-center transform transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div class="text-pku-red text-4xl md:text-5xl font-bold mb-2">3</div>
+                    <p class="text-pku-gray font-medium">courses</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 text-center transform transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div class="text-pku-red text-4xl md:text-5xl font-bold mb-2">2</div>
+                    <p class="text-pku-gray font-medium">hours of social time</p>
+                </div>
+            </div>
+
+            <!-- 图表统计 -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h4 class="text-lg font-bold mb-4 text-pku-dark">Distribution of Participants' Academic Qualifications</h4>
+                    <div class="h-64">
+                        <canvas id="regionChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h4 class="text-lg font-bold mb-4 text-pku-dark">Ranking of Top 5 Majors Among Participants</h4>
+                    <div class="h-64">
+                        <canvas id="courseChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 活动历程时间线 -->
+    <section class="py-16 bg-pku-light/20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl md:text-3xl font-serif font-bold text-pku-dark mb-4">Journey of the Summer School</h3>
+                <div class="w-20 h-1 bg-pku-red mx-auto mb-6"></div>
+                <p class="text-pku-gray max-w-3xl mx-auto">
+                    From the participants' registration to the closing ceremony, over the course of one month, we have shared countless wonderful moments together.
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- 时间线中轴线 -->
+                <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-pku-red/30 transform md:translate-x-[-0.5rem]"></div>
+
+                <!-- 时间线内容 -->
+                <div class="space-y-12">
+                    <!-- 第一周 -->
+                    <div class="relative flex flex-col md:flex-row items-start">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                            <h4 class="text-xl font-bold text-pku-dark mb-2">Participants' registration</h4>
+                            <p class="text-pku-gray mb-2">13, July</p>
+                            <p class="text-pku-gray">
+                                Offline registration of the summer school launch: Welcome 101 students from around the world to study at Peking University.
+                            </p>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-6 h-6 rounded-full bg-pku-red transform -translate-x-1/2 flex items-center justify-center">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <img src="/static/registration.jpg" alt="registration" class="rounded-lg shadow-md w-full h-auto photo-hover">
+                        </div>
+                    </div>
+
+                    <!-- 第二周 -->
+                    <div class="relative flex flex-col md:flex-row items-start">
+                        <div class="md:w-1/2 md:pr-12 order-1 md:order-1 mb-6 md:mb-0 md:text-right">
+                            <img src="/static/open.jpg" alt="Opening Ceremony" class="rounded-lg shadow-md w-full h-auto ml-auto photo-hover">
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-6 h-6 rounded-full bg-pku-red transform -translate-x-1/2 flex items-center justify-center order-0 md:order-0">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 order-2 md:order-2">
+                            <h4 class="text-xl font-bold text-pku-dark mb-2">Opening Ceremony</h4>
+                            <p class="text-pku-gray mb-2">14, July</p>
+                            <p class="text-pku-gray">
+                                The summer school was officially launched. Professor Song, Secretary of the Party Committee of the College of Advanced Manufacturing and Robotics, delivered a speech, and Professor You presided over the event. The participants officially started their studies at the summer school.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 第三周 -->
+                    <div class="relative flex flex-col md:flex-row items-start">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                            <h4 class="text-xl font-bold text-pku-dark mb-2">Foundations of Reinforcement Learning</h4>
+                            <p class="text-pku-gray mb-2">14 - 25, July (9:00-11:00 UTC+8)</p>
+                            <p class="text-pku-gray">
+                                Professor Mallada explained the basic knowledge and algorithms of reinforcement learning to everyone.
+                            </p>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-6 h-6 rounded-full bg-pku-red transform -translate-x-1/2 flex items-center justify-center">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <img src="/static/mallada.jpg" alt="RL" class="rounded-lg shadow-md w-full h-auto photo-hover">
+                        </div>
+                    </div>
+
+                    <!-- 第四周 -->
+                    <div class="relative flex flex-col md:flex-row items-start">
+                        <div class="md:w-1/2 md:pr-12 order-1 md:order-1 mb-6 md:mb-0 md:text-right">
+                            <img src="/static/opt.JPG" alt="结业成果展示" class="rounded-lg shadow-md w-full h-auto ml-auto photo-hover">
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-6 h-6 rounded-full bg-pku-red transform -translate-x-1/2 flex items-center justify-center order-0 md:order-0">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 order-2 md:order-2">
+                            <h4 class="text-xl font-bold text-pku-dark mb-2">Optimization Theory and Algorithms</h4>
+                            <p class="text-pku-gray mb-2">14 - 18, July (13:00-17:00 UTC+8)</p>
+                            <p class="text-pku-gray">
+                                Professor Ling taught optimization-related theories and their applications in AI.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row items-start">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                            <h4 class="text-xl font-bold text-pku-dark mb-2">Learning-based Safe Control under Uncertainty</h4>
+                            <p class="text-pku-gray mb-2">21 - 25, July (13:00-16:00 UTC+8)</p>
+                            <p class="text-pku-gray">
+                                Professor Gao introduced the theories and applications of robust and safe control.
+                            </p>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-6 h-6 rounded-full bg-pku-red transform -translate-x-1/2 flex items-center justify-center">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <img src="/static/gao.jpg" alt="gao" class="rounded-lg shadow-md w-full h-auto photo-hover">
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row items-start">
+                        <div class="md:w-1/2 md:pr-12 order-1 md:order-1 mb-6 md:mb-0 md:text-right">
+                            <img src="/static/social.JPG" alt="social" class="rounded-lg shadow-md w-full h-auto ml-auto photo-hover">
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-6 h-6 rounded-full bg-pku-red transform -translate-x-1/2 flex items-center justify-center order-0 md:order-0">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 order-2 md:order-2">
+                            <h4 class="text-xl font-bold text-pku-dark mb-2">Social Hour</h4>
+                            <p class="text-pku-gray mb-2">18, July (15:00-17:00 UTC+8)</p>
+                            <p class="text-pku-gray">
+                                The faculty, students of the summer school, teachers from Peking University, and sponsors engaged in academic discussions and enjoyed the tea break together.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row items-start">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                            <h4 class="text-xl font-bold text-pku-dark mb-2">Closing Ceremony</h4>
+                            <p class="text-pku-gray mb-2">25, July (16:00-16:30 UTC+8)</p>
+                            <p class="text-pku-gray">
+                                The summer school officially came to an end. Professor Li, Vice Dean of the College of Advanced Manufacturing and Robotics, delivered a speech, and Professor You presided over the event. Additionally, the summer school organizing committee awarded the title of "Outstanding Participant" to 12 participants.
+                            </p>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-6 h-6 rounded-full bg-pku-red transform -translate-x-1/2 flex items-center justify-center">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <img src="/static/closing.jpg" alt="Closing" class="rounded-lg shadow-md w-full h-auto photo-hover">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 精彩瞬间照片墙 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl md:text-3xl font-serif font-bold text-pku-dark mb-4">Wonderful moments</h3>
+                <div class="w-20 h-1 bg-pku-red mx-auto mb-6"></div>
+                <p class="text-pku-gray max-w-3xl mx-auto">
+                    Recording the beautiful memories of the summer school, each photo holds an unforgettable moment.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-lg shadow-md photo-hover">
+                    <img src="/static/1.JPG" alt="1" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md photo-hover">
+                    <img src="/static/2.jpg" alt="2" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md photo-hover">
+                    <img src="/static/3.jpg" alt="3" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md photo-hover">
+                    <img src="/static/4.jpg" alt="4" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md photo-hover">
+                    <img src="/static/5.JPG" alt="5" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md photo-hover">
+                    <img src="/static/6.JPG" alt="6" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md photo-hover">
+                    <img src="/static/7.jpg" alt="7" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md photo-hover">
+                    <img src="/static/8.jpg" alt="8" class="w-full h-64 object-cover">
+                </div>
+            </div>
+
+<!--            <div class="text-center mt-10">-->
+<!--                <button class="inline-flex items-center text-pku-red font-medium hover:underline">-->
+<!--                    查看更多照片库-->
+<!--                    <i class="fa fa-arrow-right ml-2"></i>-->
+<!--                </button>-->
+<!--            </div>-->
+        </div>
+    </section>
+
+    <!-- 学员反馈 -->
+    <section class="py-16 bg-pku-lightRed/30">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl md:text-3xl font-serif font-bold text-pku-dark mb-4">Voices of Participants</h3>
+                <div class="w-20 h-1 bg-pku-red mx-auto mb-6"></div>
+                <p class="text-pku-gray max-w-3xl mx-auto">
+                    Participants from different schools and regions shared their gains and insights from the PKU Summer School.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-6 transform transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <img src="/static/zhang.jpg" alt="学员照片" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Xuxing Zhang</h4>
+                            <p class="text-sm text-pku-gray">Tianjin University</p>
+                        </div>
+                    </div>
+                    <p class="text-pku-gray mb-4">
+                        "The class schedule is very tight, allowing for short-term focused learning of a subject, which avoids the discontinuity in learning caused by scattered courses."
+                    </p>
+                    <div class="text-pku-gold">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6 transform transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <img src="/static/he.jpg" alt="学员照片" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Xinyi He</h4>
+                            <p class="text-sm text-pku-gray">Tongji University</p>
+                        </div>
+                    </div>
+                    <p class="text-pku-gray mb-4">
+                        "The curriculum arrangement is quite reasonable, with course types and directions focusing on optimization and control, which are highly consistent with my future research direction."
+                    </p>
+                    <div class="text-pku-gold">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6 transform transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <img src="/static/wang.jpg" alt="学员照片" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Mingzhu Wang</h4>
+                            <p class="text-sm text-pku-gray">Shandong Normal University</p>
+                        </div>
+                    </div>
+                    <p class="text-pku-gray mb-4">
+                        "It's quite a rare opportunity to be able to enter and exit the Peking University campus. The food in the PKU canteens is really delicious. Everyone is welcome to come and try the meals in the PKU canteens."
+                    </p>
+                    <div class="text-pku-gold">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 后续活动预告 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-pku-red/5 rounded-2xl p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-serif font-bold text-pku-dark mb-4">Much Appreciated</h3>
+                        <p class="text-pku-gray mb-6">
+                            We sincerely appreciate the sponsorship and strong support from the Graduate School of Peking University, Exquisite Future (Guangzhou) Intelligent Technology Co., Ltd., and the School of Advanced Manufacturing and Robotics of Peking University.
+                        </p>
+<!--                        <div class="flex flex-col sm:flex-row gap-4">-->
+<!--                            <input type="email" placeholder="请输入您的邮箱地址" class="px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pku-red/50 focus:border-pku-red flex-grow">-->
+<!--                            <button class="bg-pku-red hover:bg-pku-red/90 text-white px-6 py-3 rounded-md font-medium transition-colors whitespace-nowrap">-->
+<!--                                订阅通知-->
+<!--                            </button>-->
+<!--                        </div>-->
+                    </div>
+                    <div class="hidden md:block">
+                        <img src="https://english.pku.edu.cn/Uploads/Bden/Picture/2021/09/09/s6139c0bbe07cc_3143_2127_0_32.jpg" alt="2025年暑期学校预告" class="rounded-xl shadow-md w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 图表初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 学员来源地区分布图表
+            const regionCtx = document.getElementById('regionChart').getContext('2d');
+            new Chart(regionCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Ph.D. candidate', 'Master\'s candidate', 'Undergraduate student', 'Postdoctoral researcher', 'Assistant researcher', 'Associate researcher'],
+                    datasets: [{
+                        data: [64, 30, 1, 2, 1, 2],
+                        backgroundColor: [
+                            '#C91F37',
+                            '#EF4444',
+                            '#F87171',
+                            '#3B82F6',
+                            '#60A5FA',
+                            '#93C5FD',
+                            '#D1D5DB'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        }
+                    }
+                }
+            });
+
+            // 课程类别分布图表
+            const courseCtx = document.getElementById('courseChart').getContext('2d');
+            new Chart(courseCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Control Science', 'Electrical and Electronic Engineering', 'Mathematics', 'Management Science', 'Computer Science'],
+                    datasets: [{
+                        label: 'number of people',
+                        data: [40, 11, 9, 7, 5],
+                        backgroundColor: '#C91F37',
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                display: true,
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
